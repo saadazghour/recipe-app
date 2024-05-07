@@ -80,6 +80,15 @@
       "instructions": "Toss lettuce with croutons, cheese, and dressing.",
       "status": "pending",
       "image": "caesar-salad.webp"
+    },
+    {
+      "id": "10",
+      "name": "Caesar Salad Final",
+      "description": "Classic Caesar salad with romaine lettuce, croutons, and parmesan cheese.",
+      "ingredients": ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"],
+      "instructions": "Toss lettuce with croutons, cheese, and dressing.",
+      "status": "pending",
+      "image": "caesar-saladd.webp"
     }
   ]
 }
