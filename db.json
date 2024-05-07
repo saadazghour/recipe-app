@@ -4,138 +4,82 @@
       "id": "1",
       "name": "Spaghetti Carbonara",
       "description": "Creamy Italian pasta dish with eggs, cheese, pancetta, and pepper.",
-      "ingredients": [
-        "Spaghetti",
-        "Eggs",
-        "Pancetta",
-        "Parmesan Cheese",
-        "Black Pepper"
-      ],
+      "ingredients": ["Spaghetti", "Eggs", "Pancetta", "Parmesan Cheese", "Black Pepper"],
       "instructions": "Cook pasta. Mix eggs and cheese. Cook pancetta. Combine all with pepper.",
       "status": "pending",
-      "image": "carbonara.jpg"
+      "image": "carbonara.webp"
     },
     {
       "id": "2",
       "name": "Vegetable Stir Fry",
       "description": "Quick and healthy stir fry with a variety of fresh vegetables.",
-      "ingredients": [
-        "Broccoli",
-        "Carrot",
-        "Bell Peppers",
-        "Soy Sauce",
-        "Garlic",
-        "Ginger"
-      ],
+      "ingredients": ["Broccoli", "Carrot", "Bell Peppers", "Soy Sauce", "Garlic", "Ginger"],
       "instructions": "Chop vegetables. Heat oil, add garlic and ginger. Add vegetables and soy sauce. Stir fry until cooked.",
       "status": "completed",
-      "image": "stir-fry.jpg"
+      "image": "stir-fry.webp"
     },
     {
       "id": "3",
       "name": "Chicken Tikka Masala",
       "description": "Classic Indian dish with spiced chicken in a creamy tomato sauce.",
-      "ingredients": [
-        "Chicken",
-        "Yogurt",
-        "Tomato Puree",
-        "Onions",
-        "Garlic",
-        "Spices"
-      ],
+      "ingredients": ["Chicken", "Yogurt", "Tomato Puree", "Onions", "Garlic", "Spices"],
       "instructions": "Marinate chicken in spices and yogurt. Cook onions and garlic. Add tomato puree and chicken. Simmer.",
       "status": "pending",
-      "image": "chicken-tikka.jpg"
+      "image": "chicken-tikka.webp"
     },
     {
       "id": "4",
       "name": "Beef Chili",
       "description": "Hearty and spicy beef chili with beans and tomatoes.",
-      "ingredients": [
-        "Ground Beef",
-        "Beans",
-        "Tomatoes",
-        "Onion",
-        "Chili Powder"
-      ],
+      "ingredients": ["Ground Beef", "Beans", "Tomatoes", "Onion", "Chili Powder"],
       "instructions": "Cook beef and onion. Add tomatoes, beans, and chili powder. Simmer.",
       "status": "completed",
-      "image": "beef-chili.jpg"
+      "image": "beef-chili.webp"
     },
     {
       "id": "5",
       "name": "Sushi Platter",
       "description": "Assorted sushi featuring fresh fish and vegetables.",
-      "ingredients": [
-        "Sushi Rice",
-        "Nori",
-        "Fish",
-        "Cucumber",
-        "Avocado",
-        "Soy Sauce"
-      ],
+      "ingredients": ["Sushi Rice", "Nori", "Fish", "Cucumber", "Avocado", "Soy Sauce"],
       "instructions": "Prepare sushi rice. Slice fish and vegetables. Roll sushi with nori and fillings.",
       "status": "completed",
-      "image": "sushi.jpg"
+      "image": "sushi.webp"
     },
     {
       "id": "6",
       "name": "Mushroom Risotto",
       "description": "Creamy risotto with wild mushrooms and Parmesan cheese.",
-      "ingredients": [
-        "Arborio Rice",
-        "Mushrooms",
-        "Chicken Broth",
-        "Onions",
-        "Parmesan"
-      ],
+      "ingredients": ["Arborio Rice", "Mushrooms", "Chicken Broth", "Onions", "Parmesan"],
       "instructions": "Saute mushrooms and onions. Add rice. Gradually stir in broth until absorbed. Mix in Parmesan.",
       "status": "completed",
-      "image": "risotto.jpg"
+      "image": "risotto.webp"
     },
     {
       "id": "7",
       "name": "Apple Pie",
       "description": "Classic dessert with sweet apples and a flaky crust.",
-      "ingredients": [
-        "Apples",
-        "Sugar",
-        "Flour",
-        "Butter",
-        "Cinnamon"
-      ],
+      "ingredients": ["Apples", "Sugar", "Flour", "Butter", "Cinnamon"],
       "instructions": "Peel and slice apples. Mix with sugar and cinnamon. Place in crust. Cover with top crust. Bake.",
       "status": "pending",
-      "image": "apple-pie.jpg"
+      "image": "apple-pie.webp"
     },
     {
       "id": "8",
       "name": "Tomato Soup",
       "description": "Warm and comforting tomato soup with a touch of basil.",
-      "ingredients": [
-        "Tomatoes",
-        "Onion",
-        "Garlic",
-        "Chicken Broth",
-        "Basil"
-      ],
+      "ingredients": ["Tomatoes", "Onion", "Garlic", "Chicken Broth", "Basil"],
       "instructions": "Cook onion and garlic. Add tomatoes and broth. Simmer. Blend until smooth. Garnish with basil.",
       "status": "completed",
-      "image": "tomato-soup.jpg"
+      "image": "tomato-soup.webp"
     },
     {
       "id": "9",
       "name": "Caesar Salad",
       "description": "Classic Caesar salad with romaine lettuce, croutons, and parmesan cheese.",
-      "ingredients": [
-        "Romaine Lettuce",
-        "Croutons",
-        "Parmesan Cheese",
-        "Caesar Dressing"
-      ],
+      "ingredients": ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"],
       "instructions": "Toss lettuce with croutons, cheese, and dressing.",
       "status": "pending",
-      "image": "caesar-salad.jpg"
+      "image": "caesar-salad.webp"
     }
   ]
 }
