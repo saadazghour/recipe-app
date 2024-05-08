@@ -63,7 +63,6 @@ export default {
         .get('http://localhost:3000/recipes')
         .then((res) => {
           this.recipes = res.data
-          console.log('logged', res.data)
         })
         .catch((error) => {
           console.error('There was an error fetching the recipes:', error)
