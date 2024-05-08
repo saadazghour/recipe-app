@@ -11,7 +11,7 @@
 
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <li
-        v-for="recipe in filteredRecipes"
+        v-for="recipe in paginatedRecipes"
         :key="recipe.id"
         class="bg-white rounded-lg shadow overflow-hidden"
       >
@@ -45,11 +45,31 @@
       </li>
     </ul>
 
-    <router-link
-      to="/add-recipe"
-      class="mt-4 inline-block bg-blue-500 py-2 px-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 rounded"
-      >Add New Recipe</router-link
-    >
+    <div class="flex items-center space-x-14">
+      <button
+        @click="currentPage = Math.max(currentPage - 1, 1)"
+        class="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition ease-in-out duration-150"
+        :disabled="currentPage === 1"
+      >
+        Previous
+      </button>
+
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+
+      <button
+        @click="currentPage = Math.min(currentPage + 1, totalPages)"
+        :disabled="currentPage === totalPages"
+        class="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition ease-in-out duration-150"
+      >
+        Next
+      </button>
+
+      <router-link
+        to="/add-recipe"
+        class="mt-4 inline-block bg-blue-500 py-2 px-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 rounded"
+        >Add New Recipe</router-link
+      >
+    </div>
   </div>
 </template>
 
@@ -60,10 +80,21 @@ export default {
   data() {
     return {
       recipes: [],
-      filterStatus: 'all'
+      filterStatus: 'all',
+      currentPage: 1,
+      recipesPerPage: 2 // Adjust as needed for the desired number of recipes per page
     }
   },
   computed: {
+    paginatedRecipes() {
+      const start = (this.currentPage - 1) * this.recipesPerPage
+      const end = start + this.recipesPerPage
+
+      return this.filteredRecipes.slice(start, end)
+    },
+    totalPages() {
+      return Math.ceil(this.filteredRecipes.length / this.recipesPerPage)
+    },
     filteredRecipes() {
       if (this.filterStatus === 'all') {
         return this.recipes
