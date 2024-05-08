@@ -32,8 +32,20 @@
       "image": "stir-fry.webp"
     },
     {
-      "status": "completed",
-      "id": "3"
+      "id": "3",
+      "name": "Chicken Tikka Masala",
+      "description": "Classic Indian dish with spiced chicken in a creamy tomato sauce.",
+      "ingredients": [
+        "Chicken",
+        "Yogurt",
+        "Tomato Puree",
+        "Onions",
+        "Garlic",
+        "Spices"
+      ],
+      "instructions": "Marinate chicken in spices and yogurt. Cook onions and garlic. Add tomato puree and chicken. Simmer.",
+      "status": "pending",
+      "image": "chicken-tikka.webp"
     },
     {
       "id": "4",
