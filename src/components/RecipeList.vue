@@ -23,9 +23,15 @@
 
           <button
             @click="updateStatus(recipe.id)"
-            class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-150 ease-in-out"
+            :class="{
+              'bg-blue-500 hover:bg-blue-600': recipe.status === 'pending',
+              'bg-green-500 hover:bg-green-600': recipe.status === 'completed',
+              'text-white': recipe.status === 'pending' || recipe.status === 'completed',
+              'text-gray-700': recipe.status === 'completed'
+            }"
+            class="mt-4 py-2 px-4 rounded transition duration-150 ease-in-out"
           >
-            Mark as Completed
+            {{ recipe.status === 'pending' ? 'Mark as Completed' : 'Mark as Pending' }}
           </button>
         </div>
       </li>
@@ -63,13 +69,24 @@ export default {
           console.error('There was an error fetching the recipes:', error)
         })
     },
-    updateStatus(id) {
+    updateStatus(id, currentStatus) {
+      const newStatus = currentStatus === 'completed' ? 'pending' : 'completed'
+
       axios
-        .patch(`http://localhost:3000/recipes/${id}`, {
-          status: 'completed'
+        .put(`http://localhost:3000/recipes/${id}`, {
+          status: newStatus
         })
         .then(() => {
-          this.fetchRecipes() // Refresh the list
+          // Find the recipe and update its status directly
+          const recipeIndex = this.recipes.findIndex((r) => r.id === id)
+
+          if (recipeIndex !== -1) {
+            // Using Vue.set to ensure reactivity is maintained
+            this.recipes[recipeIndex] = {
+              ...this.recipes[recipeIndex],
+              status: newStatus
+            }
+          }
         })
         .catch((error) => {
           console.error('There was an error updating the recipe:', error)
