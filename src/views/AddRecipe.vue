@@ -99,7 +99,10 @@ export default {
         // Append the image file to the FormData object
         formData.append('image', this.recipe.image, this.recipe.image.name)
         // Send the FormData object
-        this.sendRecipeData(formData)
+        this.sendRecipeData({
+          ...this.recipe,
+          image: formData
+        })
       } else {
         // No image to process, send recipe as is
         this.sendRecipeData(this.recipe)
