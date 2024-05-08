@@ -120,7 +120,7 @@ export default {
       const newStatus = currentStatus === 'completed' ? 'pending' : 'completed'
 
       axios
-        .put(`http://localhost:3000/recipes/${id}`, {
+        .patch(`http://localhost:3000/recipes/${id}`, {
           status: newStatus
         })
         .then(() => {
