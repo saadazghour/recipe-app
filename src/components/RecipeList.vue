@@ -1,9 +1,17 @@
 <template>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-bold text-center text-gray-800 my-6">Recipes</h1>
+
+    <!-- Filter Dropdown -->
+    <select v-model="filterStatus" class="mb-4 p-2 border rounded">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="pending">Pending</option>
+    </select>
+
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <li
-        v-for="recipe in recipes"
+        v-for="recipe in filteredRecipes"
         :key="recipe.id"
         class="bg-white rounded-lg shadow overflow-hidden"
       >
@@ -51,7 +59,16 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      recipes: []
+      recipes: [],
+      filterStatus: 'all'
+    }
+  },
+  computed: {
+    filteredRecipes() {
+      if (this.filterStatus === 'all') {
+        return this.recipes
+      }
+      return this.recipes.filter((recipe) => recipe.status === this.filterStatus)
     }
   },
   created() {
