@@ -27,7 +27,8 @@
         <label for="ingredients" class="block text-sm font-medium text-gray-700">Ingredients</label>
         <textarea
           id="ingredients"
-          v-model="recipe.ingredients"
+          :value="ingredientsText"
+          @input="ingredientsText = $event.target.value"
           required
           rows="4"
           class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"
@@ -37,6 +38,7 @@
         <label for="instructions" class="block text-sm font-medium text-gray-700"
           >Preparation Instructions</label
         >
+
         <textarea
           id="instructions"
           v-model="recipe.instructions"
@@ -84,13 +86,28 @@ export default {
         id: uuidv4(),
         name: '',
         description: '',
-        ingredients: '',
+        ingredients: [],
         instructions: '',
         status: 'pending',
         image: null
       }
     }
   },
+
+  computed: {
+    ingredientsText: {
+      get() {
+        // Join array into a newline-separated string for the textarea
+        return this.recipe.ingredients.join('\n')
+      },
+      set(value) {
+        // Split the string into an array at each newline
+        // Only add non-empty lines
+        this.recipe.ingredients = value.split('\n').filter((line) => line.trim() !== '')
+      }
+    }
+  },
+
   methods: {
     submitRecipe() {
       if (this.recipe.image) {
@@ -135,7 +152,7 @@ export default {
         id: uuidv4(), // Reset with new UUID
         name: '',
         description: '',
-        ingredients: '',
+        ingredients: [],
         instructions: '',
         status: 'pending',
         image: null
